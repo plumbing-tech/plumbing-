@@ -11,6 +11,7 @@
         :root {
             --primary: #3b82f6;
             --secondary: #22c55e;
+            --dark-bg: #0b0f19;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
         }
@@ -109,7 +110,14 @@
     </div>
 
     <script>
-        // Automatic Cache-Buster: Forces the mobile or desktop link to load completely fresh data
+        // Clean text alert box with no emojis
+        window.addEventListener('DOMContentLoaded', (event) => {
+            setTimeout(() => {
+                alert("Save it, you might need it");
+            }, 300);
+        });
+
+        // Automatic Cache-Buster
         (function() {
             if (!window.location.search.includes('v=')) {
                 window.location.search = '?v=' + new Date().getTime();
