@@ -46,15 +46,24 @@
             text-align: center;
         }
         
+        /* Modern Responsive Logo Section */
+        .logo-box {
+            width: 100%;
+            max-width: 240px;
+            margin: 0 auto 20px auto;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .logo-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
         .info-card {
             margin-bottom: 25px;
-        }
-        .info-card h1 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin: 0 0 12px 0;
-            letter-spacing: -0.5px;
-            color: #ffffff;
         }
         .info-card p {
             font-size: 1.05rem;
@@ -99,13 +108,16 @@
 <body>
 
     <div class="container">
+        <!-- Displaying Your Professional Logo Image -->
+        <div class="logo-box">
+            <img src="logo.png" alt="Sely's Plumbing Logo">
+        </div>
+
         <div class="info-card">
-            <h1>🔧 Sely's Plumbing</h1>
             <p>Based in <strong>Jounieh</strong>, providing premium residential installations and pipeline support. Available <strong>all over Lebanon</strong> for emergency service interventions.</p>
             <span class="accent-text">🚨 24/7 Emergency Repairs & PPR Support</span>
         </div>
 
-        <!-- Updated Direct Call Link Button -->
         <a href="tel:+96170100177" class="btn btn-call">📞 Tap to Call</a>
         <a href="whatsapp://send?phone=96170100177&text=Hi%20Sely,%20I%20need%20a%20plumbing%20estimate." class="btn btn-whatsapp">💬 Text on WhatsApp</a>
     </div>
