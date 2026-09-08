@@ -12,6 +12,7 @@
             --primary: #3b82f6;
             --secondary: #22c55e;
             --dark-bg: #0b0f19;
+            --card-bg: #131c2e;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
         }
@@ -106,6 +107,43 @@
         .btn-call { background-color: var(--primary); box-shadow: 0 4px 20px rgba(59, 130, 246, 0.35); }
         .btn-whatsapp { background-color: var(--secondary); box-shadow: 0 4px 20px rgba(34, 197, 94, 0.35); }
 
+        /* Modern Project Gallery Layout */
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 35px 0 15px 0;
+            text-align: left;
+            border-left: 4px solid var(--primary);
+            padding-left: 10px;
+        }
+        .gallery-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 10px;
+        }
+        .gallery-item {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            text-align: left;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .gallery-desc {
+            padding: 14px 16px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+            margin: 0;
+        }
+
         /* Premium Custom Notification Overlay System */
         .modal-overlay {
             position: fixed;
@@ -189,6 +227,27 @@
 
         <a href="tel:+96170100177" class="btn btn-call">📞 Tap to Call</a>
         <a href="whatsapp://send?phone=96170100177&text=Hi%20Sely,%20I%20need%20a%20plumbing%20estimate." class="btn btn-whatsapp">💬 Text on WhatsApp</a>
+
+        <!-- Brand New Recent Work Gallery Section -->
+        <h3 class="section-title">Our Recent Work</h3>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://ibb.co" alt="Modern Kitchen Installation">
+                <p class="gallery-desc">Premium modern kitchen fixture connection and under-sink layout plumbing.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://ibb.co" alt="Green PPR Piping Network">
+                <p class="gallery-desc">Clean thermal fusion welding for heavy-duty green PPR water supply loops.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://ibb.co" alt="In-Wall Pipeline Distribution">
+                <p class="gallery-desc">Precise structural rough-in alignment embedded cleanly inside masonry channels.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://ibb.co" alt="Luxury Bathroom Vanity">
+                <p class="gallery-desc">Custom luxury marble twin sink basin layout and chrome mixer installations.</p>
+            </div>
+        </div>
     </div>
 
     <!-- UI Overlay for Modern Custom Prompt Layout -->
@@ -201,7 +260,6 @@
     </div>
 
     <script>
-        // Triggers the custom design slide-up popup interface smoothly
         window.addEventListener('DOMContentLoaded', (event) => {
             setTimeout(() => {
                 document.getElementById('popupModal').classList.add('show');
@@ -212,7 +270,6 @@
             document.getElementById('popupModal').classList.remove('show');
         }
 
-        // Cache-Busting Utility
         (function() {
             if (!window.location.search.includes('v=')) {
                 window.location.search = '?v=' + new Date().getTime();
