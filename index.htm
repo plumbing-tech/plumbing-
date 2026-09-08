@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sely's Professional Plumbing Services</title>
+    <style>
+        :root {
+            --primary: #0056b3;
+            --secondary: #25D366;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --accent: #f59e0b;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light);
+            color: var(--dark);
+        }
+        header {
+            background: linear-gradient(135deg, #0f172a, #1e3a8a);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 5px solid var(--accent);
+        }
+        header h1 { margin: 0; font-size: 2.5rem; }
+        header p { margin: 10px 0 0; font-size: 1.1rem; color: #cbd5e1; }
+        
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        
+        /* Modern Floating Action Buttons */
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .btn:active { transform: scale(0.98); }
+        .btn-call { background-color: var(--primary); }
+        .btn-whatsapp { background-color: var(--secondary); }
+        
+        .section-title {
+            font-size: 1.4rem;
+            color: #0f172a;
+            border-left: 4px solid var(--primary);
+            padding-left: 10px;
+            margin-top: 30px;
+        }
+        
+        /* Modern Gallery Cards */
+        .gallery-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
+        .gallery-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            background-color: #cbd5e1;
+        }
+        .gallery-label {
+            padding: 15px;
+            background-color: white;
+        }
+        .gallery-label h4 { margin: 0 0 5px 0; color: var(--primary); }
+        .gallery-label p { margin: 0; font-size: 0.9rem; color: #64748b; }
+
+        .services-list {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .services-list ul { padding-left: 20px; margin: 0; }
+        .services-list li { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🔧 Sely's Plumbing</h1>
+        <p>Reliable & High-Quality Plumbing Solutions</p>
+        <p style="font-size: 0.9rem; color: var(--accent);">📍 Greater Jounieh & Surrounding Areas</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- Modern Clickable Link Buttons -->
+        <a href="tel:+96170100177" class="btn btn-call">📞 Call Now: +961 70 100 177</a>
+        <a href="https://wa.me." class="btn btn-whatsapp">💬 Text on WhatsApp</a>
+
+        <h3 class="section-title">📸 Recent Work Gallery</h3>
+        
+        <!-- Card 1 -->
+        <div class="gallery-card">
+            <img src="work1.jpg" alt="Water Heater Installation" onerror="this.src='https://placehold.co'">
+            <div class="gallery-label">
+                <h4>🏷️ Water Heater Installation</h4>
+                <p>Professional replacement of a residential water heating unit.</p>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="gallery-card">
+            <img src="work2.jpg" alt="Drain Cleaning" onerror="this.src='https://placehold.co'">
+            <div class="gallery-label">
+                <h4>🏷️ Drain Cleaning & Pipe Repair</h4>
+                <p>Clearing a main line clog and replacing cracked PVC pipes.</p>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="gallery-card">
+            <img src="work3.jpg" alt="Bathroom Upgrades" onerror="this.src='https://placehold.co'">
+            <div class="gallery-label">
+                <h4>🏷️ Luxury Bathroom Fixture Upgrades</h4>
+                <p>Installation of modern faucets, custom sinks, and upgraded shower heads.</p>
+            </div>
+        </div>
+
+        <h3 class="section-title">🛠️ Services Offered</h3>
+        <div class="services-list">
+            <ul>
+                <li><strong>Emergency Repairs:</strong> Leaky pipes and urgent fixes.</li>
+                <li><strong>Drain Cleaning:</strong> Clogging removal and camera inspections.</li>
+                <li><strong>Fixtures:</strong> Faucets, sinks, toilets, and water pumps.</li>
+                <li><strong>Water Heaters:</strong> Repair, maintenance, and installations.</li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>
