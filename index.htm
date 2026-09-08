@@ -44,7 +44,7 @@
             font-weight: 600;
             font-size: 1.1rem;
             color: white;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 12 rgba(0, 0, 0, 0.2);
             transition: all 0.2s ease;
             border: 1px solid rgba(255,255,255,0.05);
         }
@@ -102,9 +102,7 @@
             font-weight: 600;
             color: #ffffff;
         }
-        .folder-emoji {
-            font-size: 1.3rem;
-        }
+        .folder-emoji { font-size: 1.3rem; }
         .folder-arrow {
             font-size: 0.75rem;
             color: var(--text-muted);
@@ -146,12 +144,6 @@
             line-height: 1.5;
         }
 
-        .fallback-card {
-            padding: 45px 20px;
-            text-align: center;
-            color: var(--text-muted);
-        }
-
         /* Services Segment Panel */
         .services-list {
             background: var(--card-bg);
@@ -162,7 +154,7 @@
         }
         .services-list ul { padding-left: 20px; margin: 0; }
         .services-list li { margin-bottom: 12px; color: var(--text-main); font-size: 0.95rem; }
-        .services-list li  strong { color: #ffffff; }
+        .services-list li strong { color: #ffffff; }
         .services-list li:last-child { margin-bottom: 0; }
     </style>
 </head>
@@ -192,9 +184,9 @@
             </div>
             <div class="folder-body">
                 <div class="photo-frame">
-                    <img src="work1.jpg" alt="Water Heater" onerror="showFallback(this)">
+                    <img src="https://unsplash.com" alt="Water Heater System">
                 </div>
-                <p class="photo-desc">Professional setup and maintenance of local high-pressure water heating systems.</p>
+                <p class="photo-desc">Installation and upkeep of heavy-duty tank systems linked with professional multi-valve manifolds.</p>
             </div>
         </div>
 
@@ -209,13 +201,13 @@
             </div>
             <div class="folder-body">
                 <div class="photo-frame">
-                    <img src="work2.jpg" alt="Drain Cleaning" onerror="showFallback(this)">
+                    <img src="https://unsplash.com" alt="PVC Drainage Network">
                 </div>
-                <p class="photo-desc">Main sewer clearance, blockages cleaning, and heavy-duty pipe flush updates.</p>
+                <p class="photo-desc">Clearing main structural blocks and assembling heavy-duty orange/grey PVC drainage manifold branches.</p>
             </div>
         </div>
 
-        <!-- FOLDER 3: Bathroom Upgrades -->
+        <!-- FOLDER 3: Bathroom Fixtures -->
         <div class="folder-row">
             <div class="folder-header" onclick="toggleFolder(this)">
                 <div class="folder-icon-group">
@@ -226,26 +218,26 @@
             </div>
             <div class="folder-body">
                 <div class="photo-frame">
-                    <img src="work3.jpg" alt="Bathroom Upgrades" onerror="showFallback(this)">
+                    <img src="https://unsplash.com" alt="Mixer and Sanitary Mounting">
                 </div>
-                <p class="photo-desc">Premium installations of modern mixers, sinks, and custom washroom setups.</p>
+                <p class="photo-desc">Mounting premium chrome wall-mixers, hidden flush systems, and modern under-sink sanitary assemblies.</p>
             </div>
         </div>
 
-        <!-- FOLDER 4: Leak Detection -->
+        <!-- FOLDER 4: PPR Pipeline Networks -->
         <div class="folder-row">
             <div class="folder-header" onclick="toggleFolder(this)">
                 <div class="folder-icon-group">
                     <span class="folder-emoji">📁</span>
-                    <span>Emergency Leak Fixes</span>
+                    <span>Green PPR Piping Works</span>
                 </div>
                 <span class="folder-arrow">▶</span>
             </div>
             <div class="folder-body">
                 <div class="photo-frame">
-                    <img src="image1.jpg" alt="Leak Detection" onerror="showFallback(this)">
+                    <img src="https://unsplash.com" alt="Green PPR Fusion Welded Pipelines">
                 </div>
-                <p class="photo-desc">Advanced tracing and instant patch-ups for plumbing leaks concealed inside home walls.</p>
+                <p class="photo-desc">Thermal fusion welding of high-pressure green PPR main distribution loops for flawless hot/cold water flow.</p>
             </div>
         </div>
 
@@ -260,12 +252,5 @@
             </div>
             <div class="folder-body">
                 <div class="photo-frame">
-                    <img src="image2.jpg" alt="Water Pump" onerror="showFallback(this)">
+                    <img src="https://unsplash.com" alt="Pressure Booster System">
                 </div>
-                <p class="photo-desc">Placing, structural calibration, and testing of residential water tank line pumps.</p>
-            </div>
-        </div>
-
-        <h3 class="section-title">Services Offered</h3>
-        <div class="services-list">
-            <ul>
