@@ -11,14 +11,18 @@
         :root {
             --primary: #3b82f6;
             --secondary: #22c55e;
-            --dark-bg: #0b0f19;
             --text-main: #f8fafc;
+            --text-muted: #94a3b8;
         }
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--dark-bg);
+            background: linear-gradient(135deg, rgba(11, 15, 25, 0.94) 0%, rgba(19, 28, 46, 0.96) 100%), 
+                        url('https://unsplash.com');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: var(--text-main);
             -webkit-tap-highlight-color: transparent;
             display: flex;
@@ -29,38 +33,88 @@
         .container { 
             width: 100%;
             max-width: 500px; 
-            padding: 20px; 
+            padding: 35px 24px; 
             box-sizing: border-box;
+            background: rgba(19, 28, 46, 0.8);
+            margin: 20px;
+            border-radius: 24px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            text-align: center;
         }
-        /* Premium Contact Buttons */
+        
+        .info-card {
+            margin-bottom: 25px;
+        }
+        .info-card h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin: 0 0 12px 0;
+            letter-spacing: -0.5px;
+            color: #ffffff;
+        }
+        .info-card p {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: var(--text-muted);
+            margin: 0;
+        }
+        .info-card strong {
+            color: #ffffff;
+        }
+        .accent-text {
+            color: #f59e0b;
+            font-weight: 600;
+            display: block;
+            margin-top: 12px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
         .btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 18px;
             margin: 16px 0;
             border-radius: 16px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             color: white;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
-            transition: all 0.2s ease;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid rgba(255,255,255,0.05);
             cursor: pointer;
         }
         .btn:active { transform: scale(0.96); opacity: 0.9; }
-        .btn-call { background-color: var(--primary); box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4); }
-        .btn-whatsapp { background-color: var(--secondary); box-shadow: 0 4px 20px rgba(34, 197, 94, 0.4); }
+        .btn-call { background-color: var(--primary); box-shadow: 0 4px 20px rgba(59, 130, 246, 0.35); }
+        .btn-whatsapp { background-color: var(--secondary); box-shadow: 0 4px 20px rgba(34, 197, 94, 0.35); }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Modern Action Trigger Links Only -->
+        <div class="info-card">
+            <h1>🔧 Sely's Plumbing</h1>
+            <p>Based in <strong>Jounieh</strong>, providing premium residential installations and pipeline support. Available <strong>all over Lebanon</strong> for emergency service interventions.</p>
+            <span class="accent-text">🚨 24/7 Emergency Repairs & PPR Support</span>
+        </div>
+
         <a href="tel:+96170100177" class="btn btn-call">📞 Tap to Call and Request a Quote</a>
         <a href="whatsapp://send?phone=96170100177&text=Hi%20Sely,%20I%20need%20a%20plumbing%20estimate." class="btn btn-whatsapp">💬 Text on WhatsApp</a>
     </div>
 
+    <script>
+        // Automatic Cache-Buster: Forces the mobile or desktop link to load completely fresh data
+        (function() {
+            if (!window.location.search.includes('v=')) {
+                window.location.search = '?v=' + new Date().getTime();
+            }
+        })();
+    </script>
 </body>
 </html>
