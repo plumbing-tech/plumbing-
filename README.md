@@ -14,6 +14,22 @@ Click a button below to connect with Sely instantly:
 
 ---
 
+## 📸 Recent Work Gallery
+
+### 🏷️ Label: Water Heater Installation
+*Professional replacement of a residential water heating unit.*
+![Water Heater Installation](work1.jpg)
+
+### 🏷️ Label: Drain Cleaning & Pipe Repair
+*Clearing a main line clog and replacing cracked PVC pipes.*
+![Drain Cleaning](work2.jpg)
+
+### 🏷️ Label: Luxury Bathroom Fixture Upgrades
+*Installation of modern faucets, custom sinks, and upgraded shower heads.*
+![Fixture Upgrades](work3.jpg)
+
+---
+
 ## 🛠️ Services Offered
 * **Emergency Repairs:** Leaky pipes, burst water lines, and urgent fixes.
 * **Drain Cleaning:** Clogging removal, main line cleaning, and camera inspections.
