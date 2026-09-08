@@ -36,7 +36,6 @@
         
         .container { max-width: 550px; margin: 0 auto; padding: 0 20px 40px; }
         
-        /* Premium Action Buttons */
         .btn {
             display: flex;
             align-items: center;
@@ -75,7 +74,6 @@
             border-radius: 4px;
         }
 
-        /* High-End Folder Modules */
         .folder-row {
             background: var(--card-bg);
             border: 1px solid rgba(255, 255, 255, 0.04);
@@ -123,7 +121,6 @@
             border: 1px solid rgba(255,255,255,0.05);
         }
         
-        /* Interactive Expanding Container */
         .folder-body {
             display: none;
             background-color: rgba(11, 15, 25, 0.5);
@@ -139,7 +136,6 @@
         .folder-row.open .folder-body { display: block; }
         .folder-row.open .folder-arrow { transform: rotate(90deg); color: #ffffff; background: var(--primary); border-color: var(--primary); }
 
-        /* Modern Photo Frame Configuration */
         .photo-frame {
             background: #0b0f19;
             border-radius: 12px;
@@ -157,7 +153,6 @@
             line-height: 1.5;
         }
 
-        /* Services Segment Panel */
         .services-list {
             background: var(--card-bg);
             padding: 24px;
@@ -180,7 +175,6 @@
 
     <div class="container">
         
-        <!-- Modern Action Trigger Links -->
         <a href="tel:+96170100177" class="btn btn-call">📞 Tap to Call and Request a Quote</a>
         <a href="whatsapp://send?phone=96170100177&text=Hi%20Sely,%20I%20need%20a%20plumbing%20estimate." class="btn btn-whatsapp">💬 Text on WhatsApp</a>
 
@@ -250,3 +244,10 @@
                 <div class="photo-frame">
                     <img src="https://unsplash.com" alt="Green PPR Fusion Welded Pipelines">
                 </div>
+                <p class="photo-desc">Thermal fusion welding of high-pressure green PPR main distribution loops for flawless hot/cold water flow.</p>
+            </div>
+        </div>
+
+        <!-- FOLDER 5 -->
+        <div class="folder-row">
+            <div class="folder-header" onclick="toggleFolder(this)">
