@@ -31,7 +31,7 @@
         
         .container { max-width: 600px; margin: 0 auto; padding: 20px; }
         
-        /* Modern Floating Action Buttons */
+        /* Contact Buttons */
         .btn {
             display: flex;
             align-items: center;
@@ -57,8 +57,43 @@
             padding-left: 10px;
             margin-top: 30px;
         }
+
+        /* Interactive Folder Tabs */
+        .folder-navigation {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 10px 0;
+            margin-bottom: 20px;
+            scrollbar-width: none;
+        }
+        .folder-tab {
+            background-color: #e2e8f0;
+            color: #475569;
+            padding: 10px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: none;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+        .folder-tab.active {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 86, 179, 0.25);
+        }
+
+        /* Photo Folder Container */
+        .folder-content {
+            display: none;
+        }
+        .folder-content.active {
+            display: block;
+        }
         
-        /* Modern Gallery Cards */
+        /* Modern Gallery Cards with Custom Image Backgrounds */
         .gallery-card {
             background: white;
             border-radius: 12px;
@@ -67,11 +102,19 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             border: 1px solid #e2e8f0;
         }
+        .image-wrapper {
+            background: linear-gradient(45deg, #e2e8f0, #cbd5e1); /* Smooth modern backdrop for pictures */
+            position: relative;
+            width: 100%;
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
         .gallery-card img {
             width: 100%;
             height: auto;
             display: block;
-            background-color: #cbd5e1;
         }
         .gallery-label {
             padding: 15px;
@@ -79,6 +122,19 @@
         }
         .gallery-label h4 { margin: 0 0 5px 0; color: var(--primary); }
         .gallery-label p { margin: 0; font-size: 0.9rem; color: #64748b; }
+
+        /* Auto-fixing Fallback Block if image breaks or is renamed */
+        .fallback-box {
+            padding: 40px 20px;
+            text-align: center;
+            color: #475569;
+            font-weight: 500;
+        }
+        .fallback-box span {
+            display: block;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
 
         .services-list {
             background: white;
@@ -100,54 +156,83 @@
 
     <div class="container">
         
-        <!-- Modern Clickable Link Buttons -->
+        <!-- Modern Contact Links -->
         <a href="tel:+96170100177" class="btn btn-call">📞 Call Now: +961 70 100 177</a>
         <a href="whatsapp://send?phone=96170100177&text=Hi%20Sely,%20I%20need%20a%20plumbing%20estimate." class="btn btn-whatsapp">💬 Text on WhatsApp</a>
 
-        <h3 class="section-title">📸 Recent Work Gallery</h3>
+        <h3 class="section-title">📂 Click a Folder to View Work Photos</h3>
         
-        <!-- Card 1 -->
-        <div class="gallery-card">
-            <img src="work1.jpg" alt="Water Heater Installation" onerror="this.src='https://placehold.co'">
-            <div class="gallery-label">
-                <h4>🏷️ Water Heater Installation</h4>
-                <p>Professional replacement of a residential water heating unit.</p>
+        <!-- Clickable Folder Tabs -->
+        <div class="folder-navigation">
+            <button class="folder-tab active" onclick="openFolder('heaters')">📁 Water Heaters</button>
+            <button class="folder-tab" onclick="openFolder('drains')">📁 Drain Cleaning</button>
+            <button class="folder-tab" onclick="openFolder('fixtures')">📁 Bathroom Upgrades</button>
+            <button class="folder-tab" onclick="openFolder('leaks')">📁 Leak Detection</button>
+            <button class="folder-tab" onclick="openFolder('pumps')">📁 Water Pumps</button>
+        </div>
+
+        <!-- FOLDER 1: Water Heaters -->
+        <div id="heaters" class="folder-content active">
+            <div class="gallery-card">
+                <div class="image-wrapper">
+                    <img src="work1.jpg" alt="Water Heater" onerror="handleImageError(this)">
+                </div>
+                <div class="gallery-label">
+                    <h4>🏷️ Water Heater Installation</h4>
+                    <p>Professional replacement of a residential water heating unit.</p>
+                </div>
             </div>
         </div>
 
-        <!-- Card 2 -->
-        <div class="gallery-card">
-            <img src="work2.jpg" alt="Drain Cleaning" onerror="this.src='https://placehold.co'">
-            <div class="gallery-label">
-                <h4>🏷️ Drain Cleaning & Pipe Repair</h4>
-                <p>Clearing a main line clog and replacing cracked PVC pipes.</p>
+        <!-- FOLDER 2: Drains -->
+        <div id="drains" class="folder-content">
+            <div class="gallery-card">
+                <div class="image-wrapper">
+                    <img src="work2.jpg" alt="Drain Cleaning" onerror="handleImageError(this)">
+                </div>
+                <div class="gallery-label">
+                    <h4>🏷️ Drain Cleaning & Pipe Repair</h4>
+                    <p>Clearing a main line clog and replacing cracked PVC pipes.</p>
+                </div>
             </div>
         </div>
 
-        <!-- Card 3 -->
-        <div class="gallery-card">
-            <img src="work3.jpg" alt="Bathroom Upgrades" onerror="this.src='https://placehold.co'">
-            <div class="gallery-label">
-                <h4>🏷️ Luxury Bathroom Fixture Upgrades</h4>
-                <p>Installation of modern faucets, custom sinks, and upgraded shower heads.</p>
+        <!-- FOLDER 3: Fixtures -->
+        <div id="fixtures" class="folder-content">
+            <div class="gallery-card">
+                <div class="image-wrapper">
+                    <img src="work3.jpg" alt="Bathroom Upgrades" onerror="handleImageError(this)">
+                </div>
+                <div class="gallery-label">
+                    <h4>🏷️ Luxury Bathroom Fixture Upgrades</h4>
+                    <p>Installation of modern faucets, custom sinks, and shower heads.</p>
+                </div>
             </div>
         </div>
 
-        <!-- New Card 4 (image1.jpg) -->
-        <div class="gallery-card">
-            <img src="image1.jpg" alt="Leak Detection" onerror="this.src='https://placehold.co'">
-            <div class="gallery-label">
-                <h4>🏷️ Emergency Leak Detection & Repair</h4>
-                <p>Locating hidden water leaks behind walls and repairing copper pipelines.</p>
+        <!-- FOLDER 4: Leaks -->
+        <div id="leaks" class="folder-content">
+            <div class="gallery-card">
+                <div class="image-wrapper">
+                    <img src="image1.jpg" alt="Leak Detection" onerror="handleImageError(this)">
+                </div>
+                <div class="gallery-label">
+                    <h4>🏷️ Emergency Leak Detection</h4>
+                    <p>Locating hidden leaks behind walls and repairing copper pipelines.</p>
+                </div>
             </div>
         </div>
 
-        <!-- New Card 5 (image2.jpg) -->
-        <div class="gallery-card">
-            <img src="image2.jpg" alt="Water Pump Service" onerror="this.src='https://placehold.co'">
-            <div class="gallery-label">
-                <h4>🏷️ Water Pump & Pressure Tank Service</h4>
-                <p>Installing and configuring high-pressure building water systems.</p>
+        <!-- FOLDER 5: Pumps -->
+        <div id="pumps" class="folder-content">
+            <div class="gallery-card">
+                <div class="image-wrapper">
+                    <img src="image2.jpg" alt="Water Pump" onerror="handleImageError(this)">
+                </div>
+                <div class="gallery-label">
+                    <h4>🏷️ Water Pump & Pressure Tank Service</h4>
+                    <p>Installing and configuring high-pressure building water systems.</p>
+                </div>
             </div>
         </div>
 
@@ -163,5 +248,25 @@
 
     </div>
 
-</body>
-</html>
+    <script>
+        // Folder Tab Navigation Logic
+        function openFolder(folderId) {
+            // Hide all folders
+            document.querySelectorAll('.folder-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            // Deactivate all folder buttons
+            document.querySelectorAll('.folder-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            // Show selected folder and highlight button
+            document.getElementById(folderId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        // Automatic Image Fixer: Replaces broken/renamed images with a sleek info card
+        function handleImageError(image) {
+            const wrapper = image.parentElement;
+            wrapper.innerHTML = `
+                <div class="fallback-box">
+                    <span>🛠️</span>
