@@ -6,148 +6,164 @@
     <title>Sely's Professional Plumbing Services</title>
     <style>
         :root {
-            --primary: #0056b3;
-            --secondary: #25D366;
-            --dark: #1e293b;
-            --light: #f8fafc;
+            --primary: #2563eb;
+            --secondary: #16a34a;
+            --dark-bg: #0f172a;
+            --card-bg: #1e293b;
             --accent: #f59e0b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
         }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--light);
-            color: var(--dark);
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            -webkit-tap-highlight-color: transparent;
         }
         header {
-            background: linear-gradient(135deg, #0f172a, #1e3a8a);
-            color: white;
+            background: linear-gradient(180deg, #1e3a8a 0%, var(--dark-bg) 100%);
             text-align: center;
-            padding: 40px 20px;
-            border-bottom: 5px solid var(--accent);
+            padding: 35px 20px 20px;
         }
-        header h1 { margin: 0; font-size: 2.5rem; }
-        header p { margin: 10px 0 0; font-size: 1.1rem; color: #cbd5e1; }
+        header h1 { margin: 0; font-size: 2.2rem; font-weight: 700; color: #ffffff; }
+        header p { margin: 8px 0 0; font-size: 1rem; color: var(--text-muted); }
         
-        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .container { max-width: 550px; margin: 0 auto; padding: 0 20px 40px; }
         
-        /* Contact Buttons */
+        /* Premium Action Buttons */
         .btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 15px;
-            margin: 12px 0;
-            border-radius: 50px;
+            padding: 16px;
+            margin: 14px 0;
+            border-radius: 12px;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2rem;
+            font-weight: 600;
+            font-size: 1.1rem;
             color: white;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255,255,255,0.05);
         }
-        .btn:active { transform: scale(0.98); }
+        .btn:active { transform: scale(0.98); opacity: 0.9; }
         .btn-call { background-color: var(--primary); }
         .btn-whatsapp { background-color: var(--secondary); }
         
         .section-title {
-            font-size: 1.4rem;
-            color: #0f172a;
-            border-left: 4px solid var(--primary);
-            padding-left: 10px;
-            margin-top: 30px;
-            margin-bottom: 15px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 35px 0 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            background-color: var(--primary);
+            border-radius: 2px;
         }
 
-        /* Clickable Folder Elements */
+        /* High-End Professional Folder Architecture */
         .folder-row {
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            margin-bottom: 12px;
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 14px;
+            margin-bottom: 14px;
             overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+            transition: border-color 0.2s ease;
+        }
+        .folder-row:hover, .folder-row.open {
+            border-color: rgba(37, 99, 235, 0.4);
         }
         .folder-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 18px 20px;
-            background: white;
+            padding: 20px;
             cursor: pointer;
-            font-weight: 600;
-            font-size: 1.1rem;
             user-select: none;
-            transition: background 0.2s;
+            background: linear-gradient(90deg, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0) 100%);
         }
-        .folder-header:hover {
-            background-color: #f1f5f9;
-        }
+        .folder-header:active { background-color: rgba(255,255,255,0.03); }
+        
         .folder-icon-group {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+        .folder-emoji {
+            font-size: 1.3rem;
         }
         .folder-arrow {
-            font-size: 0.8rem;
-            color: #94a3b8;
-            transition: transform 0.2s;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(255,255,255,0.05);
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
         }
         
-        /* Expandable Photo Tray */
+        /* Expandable Photo Box */
         .folder-body {
             display: none;
-            background-color: #f8fafc;
-            border-top: 1px solid #e2e8f0;
+            background-color: rgba(15, 23, 42, 0.4);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
             padding: 20px;
         }
         
-        /* Active States controlled by JavaScript */
-        .folder-row.open .folder-body {
-            display: block;
-        }
-        .folder-row.open .folder-arrow {
-            transform: rotate(90deg);
-        }
+        .folder-row.open .folder-body { display: block; }
+        .folder-row.open .folder-arrow { transform: rotate(90deg); color: #ffffff; background: var(--primary); }
 
-        /* Image Display Grid with Custom Background Color */
+        /* Modern Photo Frame Configuration */
         .photo-frame {
-            background: #cbd5e1; /* Professional structural background color */
-            border-radius: 8px;
+            background: #0f172a;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
-            margin-bottom: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin-bottom: 14px;
         }
-        .photo-frame img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
+        .photo-frame img { width: 100%; height: auto; display: block; }
+        
         .photo-desc {
             font-size: 0.95rem;
-            color: #475569;
-            margin: 4px 0 0 0;
-            line-height: 1.4;
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.5;
         }
 
-        /* Fallback block for missing or custom-named images */
         .fallback-card {
-            padding: 40px 20px;
+            padding: 45px 20px;
             text-align: center;
-            color: #64748b;
-            background-color: #e2e8f0;
-            border-radius: 8px;
+            color: var(--text-muted);
         }
 
+        /* Services Segment Panel */
         .services-list {
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border: 1px solid #e2e8f0;
+            background: var(--card-bg);
+            padding: 22px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
         }
         .services-list ul { padding-left: 20px; margin: 0; }
-        .services-list li { margin-bottom: 10px; }
+        .services-list li { margin-bottom: 12px; color: var(--text-main); font-size: 0.95rem; }
+        .services-list li  strong { color: #ffffff; }
+        .services-list li:last-child { margin-bottom: 0; }
     </style>
 </head>
 <body>
@@ -155,22 +171,21 @@
     <header>
         <h1>🔧 Sely's Plumbing</h1>
         <p>Reliable & High-Quality Plumbing Solutions</p>
-        <p style="font-size: 0.9rem; color: var(--accent);">📍 Greater Jounieh & Surrounding Areas</p>
     </header>
 
     <div class="container">
         
-        <!-- Modern Contact Links -->
-        <a href="tel:+96170100177" class="btn btn-call">📞 Call Now: +961 70 100 177</a>
+        <!-- Modern Hidden Contact Links -->
+        <a href="tel:+96170100177" class="btn btn-call">📞 Tap to Call and Request a Quote</a>
         <a href="whatsapp://send?phone=96170100177&text=Hi%20Sely,%20I%20need%20a%20plumbing%20estimate." class="btn btn-whatsapp">💬 Text on WhatsApp</a>
 
-        <h3 class="section-title">📁 Tap a Folder to Open Photos</h3>
+        <h3 class="section-title">Tap a Folder to Open Photos</h3>
         
         <!-- FOLDER 1: Water Heaters -->
         <div class="folder-row">
             <div class="folder-header" onclick="toggleFolder(this)">
                 <div class="folder-icon-group">
-                    <span>📁</span>
+                    <span class="folder-emoji">📁</span>
                     <span>Water Heater Installations</span>
                 </div>
                 <span class="folder-arrow">▶</span>
@@ -187,7 +202,7 @@
         <div class="folder-row">
             <div class="folder-header" onclick="toggleFolder(this)">
                 <div class="folder-icon-group">
-                    <span>📁</span>
+                    <span class="folder-emoji">📁</span>
                     <span>Drain Cleaning & Clogs</span>
                 </div>
                 <span class="folder-arrow">▶</span>
@@ -204,7 +219,7 @@
         <div class="folder-row">
             <div class="folder-header" onclick="toggleFolder(this)">
                 <div class="folder-icon-group">
-                    <span>📁</span>
+                    <span class="folder-emoji">📁</span>
                     <span>Bathroom Fixtures</span>
                 </div>
                 <span class="folder-arrow">▶</span>
@@ -221,7 +236,7 @@
         <div class="folder-row">
             <div class="folder-header" onclick="toggleFolder(this)">
                 <div class="folder-icon-group">
-                    <span>📁</span>
+                    <span class="folder-emoji">📁</span>
                     <span>Emergency Leak Fixes</span>
                 </div>
                 <span class="folder-arrow">▶</span>
@@ -238,7 +253,7 @@
         <div class="folder-row">
             <div class="folder-header" onclick="toggleFolder(this)">
                 <div class="folder-icon-group">
-                    <span>📁</span>
+                    <span class="folder-emoji">📁</span>
                     <span>Water Pump Services</span>
                 </div>
                 <span class="folder-arrow">▶</span>
@@ -251,28 +266,6 @@
             </div>
         </div>
 
-        <h3 class="section-title">🛠️ Services Offered</h3>
+        <h3 class="section-title">Services Offered</h3>
         <div class="services-list">
             <ul>
-                <li><strong>Emergency Repairs:</strong> Leaky pipes and urgent fixes.</li>
-                <li><strong>Drain Cleaning:</strong> Clogging removal and camera inspections.</li>
-                <li><strong>Fixtures:</strong> Faucets, sinks, toilets, and water pumps.</li>
-                <li><strong>Water Heaters:</strong> Repair, maintenance, and installations.</li>
-            </ul>
-        </div>
-
-    </div>
-
-    <script>
-        // Smooth Accordion Folder Toggle Logic
-        function toggleFolder(headerElement) {
-            const row = headerElement.parentElement;
-            row.classList.toggle('open');
-        }
-
-        // Handles custom or missing picture file configurations seamlessly
-        function showFallback(imgElement) {
-            const frame = imgElement.parentElement;
-            frame.innerHTML = `
-                <div class="fallback-card">
-                    <span style="font-size:1.8rem; display:block; margin-bottom:5px;">📂</span>
