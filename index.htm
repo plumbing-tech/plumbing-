@@ -12,6 +12,7 @@
             --primary: #3b82f6;
             --secondary: #22c55e;
             --dark-bg: #0b0f19;
+            --card-bg: #131c2e;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
         }
@@ -164,7 +165,7 @@
         .custom-popup {
             width: 100%;
             max-width: 500px;
-            background: rgba(30, 41, 59, 0.9);
+            background: rgba(30, 41, 59, 0.95);
             border-top: 1px solid rgba(255, 255, 255, 0.15);
             border-left: 1px solid rgba(255, 255, 255, 0.08);
             border-right: 1px solid rgba(255, 255, 255, 0.08);
@@ -186,8 +187,9 @@
             margin: 0 0 10px 0;
         }
         .popup-text {
-            font-size: 1rem;
-            color: var(--text-muted);
+            font-size: 1.1rem;
+            color: #ffffff;
+            font-weight: 600;
             line-height: 1.5;
             margin: 0 0 24px 0;
         }
@@ -240,6 +242,9 @@
     </div>
 
     <script>
+        // Track language selection globally so popup stays synced
+        let currentLang = 'en';
+
         // Language Translation Database
         const translations = {
             en: {
@@ -263,10 +268,7 @@
         };
 
         function setLanguage(lang) {
+            currentLang = lang;
+            
             // Toggle active classes on language buttons
             document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-            document.getElementById('btn-ar').classList.toggle('active', lang === 'ar');
-            
-            // Toggle RTL style direction class on body element
-            document.body.classList.toggle('rtl', lang === 'ar');
-            
